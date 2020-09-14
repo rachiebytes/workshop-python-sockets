@@ -25,7 +25,6 @@ if __name__ == "__main__":
     ap.add_argument("-p", "--port", default=12345, type=int)
     ap.add_argument("-r", "--request", default="Hi!!!", type=str)
     args = vars(ap.parse_args())
-
     port = args["port"]
     request = args["request"]
 

@@ -11,7 +11,8 @@ PATHS = defaultdict(
     {
         "/fruits": "apples, mangos, cherries",
         "/nuts": "almonds, peanuts, pistachios",
-        "/vegetables": "carrots, squash, broccoli"
+        "/vegetables": "carrots, squash, broccoli",
+        # TODO: add another request type and response
     }
 )
 
@@ -19,7 +20,7 @@ PATHS = defaultdict(
 class ApiServer():
 
     def __init__(self, host, port):
-        self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.socket = socket.socket()
         self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.socket.bind((host, port))
         self.socket.listen()
@@ -39,10 +40,11 @@ class ApiServer():
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("-p", "--port", default=12345, type=int)
+    ap.add_argument("-p", "--port", default=22345, type=int)
     args = vars(ap.parse_args())
+    port = args["port"]
 
-    server = ApiServer(LOCAL_HOST, args["port"])
+    server = ApiServer(LOCAL_HOST, port)
 
     while True:
         conn, addr = server.accept()

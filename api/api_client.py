@@ -22,13 +22,14 @@ class ApiClient():
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("-p", "--port", default=12345, type=int)
+    ap.add_argument("-p", "--port", default=22345, type=int)
+    ap.add_argument("-r", "--request", default="/fruits", type=str)
     args = vars(ap.parse_args())
+    port = args["port"]
+    request = args["request"]
 
-    client = ApiClient(LOCAL_HOST, args["port"])
+    client = ApiClient(LOCAL_HOST, port)
 
-    request = "/fruits"
     print("REQUEST: ", request)
-
     response = client.send_request(request)
     print("RESPONSE: ", response)
