@@ -12,6 +12,7 @@ PATHS = defaultdict(
         "/fruits": "apples, mangos, cherries",
         "/nuts": "almonds, peanuts, pistachios",
         "/veggies": "carrots, squash, broccoli",
+        "/tacos": "pueblo viejo > torchys",
         # TODO: add another request type and response
     }
 )
