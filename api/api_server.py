@@ -11,7 +11,7 @@ PATHS = defaultdict(
     {
         "/fruits": "apples, mangos, cherries",
         "/nuts": "almonds, peanuts, pistachios",
-        "/vegetables": "carrots, squash, broccoli",
+        "/veggies": "carrots, squash, broccoli",
         # TODO: add another request type and response
     }
 )
@@ -48,5 +48,4 @@ if __name__ == "__main__":
 
     while True:
         conn, addr = server.accept()
-        print("Client address: ", addr) # notice the client's port keeps changing
         server.send_response(conn)

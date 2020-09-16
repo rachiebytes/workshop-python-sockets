@@ -34,8 +34,8 @@ class ChatApp(object):
                     raise err
                 print("Could not connect to peer. Trying again in 3 seconds.")
                 time.sleep(3)
-        print("Connection established with peer.")
 
+        print("Connected to peer!")
         # send a message to the remote chat app
         while True:
             msg = fileinput.input()

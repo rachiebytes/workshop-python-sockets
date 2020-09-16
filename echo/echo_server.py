@@ -36,5 +36,4 @@ if __name__ == "__main__":
 
     while True:
         conn, addr = server.accept()
-        print("Client address: ", addr) # notice the client's port keeps changing
         server.send_response(conn)
